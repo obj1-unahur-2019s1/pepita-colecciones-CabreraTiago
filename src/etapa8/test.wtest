@@ -1,0 +1,48 @@
+import pepita.*
+import comidas.*
+import masAves.*
+import roque.*
+import susana.*
+import instituto.*
+
+test "test_1" {
+	pepita.comer(alpiste, 50)
+	assert.equals(true, pepita.puedeVolar(5))
+	assert.equals(false, pepita.puedeVolar(1000))
+}
+
+test "test_2" {
+	pepon.comer(bigMac, 5)
+	assert.equals(false, pepon.puedeVolar(20))
+	assert.equals(true, pepon.puedeVolar(1))
+}
+
+test "test_3" {
+	pipa.comer(sorgo, 1)
+	assert.equals(true, pipa.puedeVolar(35))
+}
+
+
+// TERMINAR TEST
+test "test_instituto" {
+	
+	instituto.contratar(roque)
+	instituto.contratar(susana)
+	var entrenadores = #{roque, susana}
+	assert.equals(entrenadores, instituto.entrenadores())
+	
+	roque.agregarPupilo(pipa)
+	roque.agregarPupilo(pepon)
+	susana.tuPupiloEs(pepita)
+	var pupilosRoque = #{pipa, pepon}
+	assert.equals(pupilosRoque, roque.pupilos())
+	assert.equals(pepita, susana.pupiloActual())
+	
+	instituto.entrenamientoGeneral()
+	
+	
+	
+	
+	
+	
+}
