@@ -22,27 +22,35 @@ test "test_3" {
 	assert.equals(true, pipa.puedeVolar(35))
 }
 
-
-// TERMINAR TEST
 test "test_instituto" {
 	
+	// Contrato entrenadores
 	instituto.contratar(roque)
 	instituto.contratar(susana)
+	
 	var entrenadores = #{roque, susana}
 	assert.equals(entrenadores, instituto.entrenadores())
 	
+	// Agrego pupilos a los nuevos entrenadores
 	roque.agregarPupilo(pipa)
 	roque.agregarPupilo(pepon)
 	susana.tuPupiloEs(pepita)
+	
 	var pupilosRoque = #{pipa, pepon}
 	assert.equals(pupilosRoque, roque.pupilos())
+	
 	assert.equals(pepita, susana.pupiloActual())
 	
+	// Los pupilos realizan la rutina
 	instituto.entrenamientoGeneral()
 	
+	assert.equals(true, instituto.buenAmbiente())
 	
+	// Ahora roque tiene un solo pupilo
 	
+	roque.dejarPupilo(pipa)
+	assert.equals(false, roque.estaFeliz())
 	
-	
+	assert.equals(false, instituto.buenAmbiente())
 	
 }
